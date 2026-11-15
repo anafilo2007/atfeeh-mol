@@ -1,0 +1,13 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<body style="font:16px sans-serif;padding:16px;direction:rtl"><h3>فحص اطفيح مول</h3><pre id="o"></pre>
+<script>const o=document.getElementById('o');const p=t=>o.textContent+=t+'\n';window.onerror=m=>p('خطأ: '+m);p('1) الصفحة اشتغلت');</script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" onerror="p('فشل تحميل firebase-app')"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" onerror="p('فشل تحميل firebase-auth')"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js" onerror="p('فشل تحميل firebase-firestore')"></script>
+<script>
+p('2) مكتبة firebase: '+(typeof firebase));
+if(typeof firebase!='undefined'){
+firebase.initializeApp({apiKey:"AIzaSyA3vIpvneFnlXyqXsKiDtFft-66oW0zAek",authDomain:"atfeeh-mol.firebaseapp.com",projectId:"atfeeh-mol",appId:"1:439076904666:web:d58fc26b7e3f35c9fa0fe3"});
+firebase.firestore().collection('shops').get().then(s=>p('3) قاعدة البيانات شغالة، عدد المتاجر: '+s.size)).catch(e=>p('3) خطأ في قاعدة البيانات: '+e.message));
+}
+</script>
